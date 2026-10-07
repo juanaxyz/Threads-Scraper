@@ -9,7 +9,7 @@ SESSION_FILE = BASE_DIR / "session" / "threads_login.json"
 # --- Hasil scraping ---
 OUTPUT_FILE = BASE_DIR / "data" / "threads_ihsg.csv"
 FIELDS = ["tanggal", "akun", "kategori", "isi", "url"]
-
+HEADLESS=True
 # --- Pencarian Threads ---
 QUERY = "ihsg"
 SEARCH_URL = f"https://www.threads.com/search?q={QUERY}&filter=recent"

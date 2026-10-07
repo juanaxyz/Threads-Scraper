@@ -1,6 +1,6 @@
 from playwright.async_api import async_playwright
 
-from app.config import SESSION_FILE
+from app.config import SESSION_FILE, HEADLESS
 
 # Tipe resource yang diblokir. Yang dipakai hanya data teks (HTML + XHR/JS), jadi aman.
 BLOCKED_RESOURCE_TYPES = {"image", "media", "font"}   # tambahkan "stylesheet" jika berani, lihat catatan
@@ -29,7 +29,7 @@ async def start_browser():
     playwright = await async_playwright().start()
 
     browser = await playwright.firefox.launch(
-        headless=False
+        headless=HEADLESS
     )
 
     if not SESSION_FILE.exists():
